@@ -1,0 +1,25 @@
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+# Esempio di database di base per gli utenti
+users = [
+    {'id': 1, 'username': 'user1', 'email': 'user1@example.com'},
+    {'id': 2, 'username': 'user2', 'email': 'user2@example.com'},
+    # Aggiungere altri utenti secondo necessità
+]
+
+@app.route('/')
+def index():
+    return render_template('index.html', users=users)
+
+@app.route('/profile/<int:user_id>')
+def profile(user_id):
+    user = next((user for user in users if user['id'] == user_id), None)
+    if user:
+        return render_template('profile.html', user=user)
+    else:
+        return 'Utente non trovato'
+
+if __name__ == '__main__':
+    app.run(debug=True)

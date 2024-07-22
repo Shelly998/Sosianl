@@ -12,6 +12,22 @@ users = [
     user = next((user for user in users if user['id'] == user_id), None)
     if user:
         return render_template('profile.html', user=user)
+    else:    {'id': 1, 'username': 'user1', 'email': 'user1@example.com'},
+    {'id': 2, 'username': 'user2', 'email': 'user2@example.com'},
+    # Aggiungere altri utenti secondo necessità
+]
+
+    user = next((user for user in users if user['id'] == user_id), None)
+    if user:
+        return render_template('profile.html', user=user)
+    else:    {'id': 1, 'username': 'user1', 'email': 'user1@example.com'},
+    {'id': 2, 'username': 'user2', 'email': 'user2@example.com'},
+    # Aggiungere altri utenti secondo necessità
+]
+
+    user = next((user for user in users if user['id'] == user_id), None)
+    if user:
+        return render_template('profile.html', user=user)
     else:
         return 'Utente non trovato'
 
